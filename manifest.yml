@@ -1,0 +1,32 @@
+---
+name: otp
+short_desc: Template for simple OTP application
+version: 1
+options:
+- name: required
+  required: true
+- name: nonrequired
+  default: true
+- name: number
+  default: 123
+- name: string
+  default: string
+files:
+  base:
+  - config/config.exs
+  test: []
+  standalone:
+  - ".gitignore"
+  - ".formatter.exs"
+  - config/config.exs
+  - lib/$PROJECTC_NAME$.ex
+injects:
+- name: genserver
+  description: GenServer realisation
+  aliases: ["gs"]
+  template: injects/genserver.eex
+  options:
+  - name: tick
+    default: false
+  - name: via
+    default: false
