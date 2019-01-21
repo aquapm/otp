@@ -45,6 +45,7 @@ defmodule <%= @module_alias %> do
     Process.send_after(self(), :work, 1_000)
   end
 
+  @impl GenServer
   def handle_info(:work, state) do
     #TODO: Do some usefull job here
     schedule_work()
@@ -53,12 +54,12 @@ defmodule <%= @module_alias %> do
   @impl GenServer
   def handle_call(:get, _from, state) do
     # TODO: Do some usefull job here
-    {:return, state, state}
+    {:reply, state, state}
   end
 
   @impl GenServer
   def handle_cast({:set, data}, state) do
     # TODO: Do some usefull job here
-    {:no_return, state.data}
+    {:noreply, state.data}
   end<% end %>
 end
