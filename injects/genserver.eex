@@ -60,6 +60,6 @@ defmodule <%= @module_alias %> do
   @impl GenServer
   def handle_cast({:set, data}, state) do
     # TODO: Do some usefull job here
-    {:noreply, state.data}
+    {:noreply, state, data}
   end<% end %>
 end
