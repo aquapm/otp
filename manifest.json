@@ -43,11 +43,13 @@
 			"options": [
 				{
 					"name": "tick",
-					"default": false
+					"default": false,
+					"type": "boolean"
 				},
 				{
 					"name": "via",
-					"default": false
+					"default": false,
+					"type": "boolean"
 				}
 			]
 		}
