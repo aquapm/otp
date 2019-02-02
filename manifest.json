@@ -2,34 +2,21 @@
 	"name": "otp",
 	"short_desc": "Template for simple OTP application",
 	"version": 1,
-	"options": [
-		{
-			"name": "required",
-			"required": true
-		},
-		{
-			"name": "nonrequired",
-			"default": true
-		},
-		{
-			"name": "number",
-			"default": 123
-		},
-		{
-			"name": "string",
-			"default": "string"
-		}
-	],
+	"options": [],
 	"files": {
 		"base": [
-			"config/config.exs"
-		],
-		"test": [],
-		"standalone": [
-			".gitignore",
-			".formatter.exs",
 			"config/config.exs",
-			"lib/$PROJECTC_NAME$.ex"
+			".formatter.exs",
+			".gitignore",
+			"mix.exs",
+			"README.md",
+			"lib/<%= @project_name %>/application.ex"
+		],
+		"test": [
+			"config/test.exs",
+			"config/dev.exs",
+			"config/prod.exs",
+			"test/test_helper.exs"
 		]
 	},
 	"injects": [
