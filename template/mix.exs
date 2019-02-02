@@ -1,9 +1,9 @@
-defmodule Template.MixProject do
+defmodule <%= @project_name_camel_case %>.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :template,
+      app: :<%= @project_name %>,
       version: "0.1.0",
       elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,
@@ -15,15 +15,13 @@ defmodule Template.MixProject do
   def application do
     [
       extra_applications: [:logger],
-      mod: {Template.Application, []}
+      mod: {<%= @project_name_camel_case %>.Application, []}
     ]
   end
 
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"},
     ]
   end
 end
