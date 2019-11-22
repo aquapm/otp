@@ -4,8 +4,12 @@ defmodule <%= @project_name_camel_case %>.MixProject do
   def project do
     [
       app: :<%= @project_name %>,
-      version: "0.1.0",
-      elixir: "~> 1.7",
+      version: "0.1.0",<%= if @in_umbrella? do %>
+      build_path: "../../_build",
+      config_path: "../../config/config.exs",
+      deps_path: "../../deps",
+      lockfile: "../../mix.lock",<% end %>
+      elixir: "~> <%= @elixir_version.major %>.<%= @elixir_version.minor %>",
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
